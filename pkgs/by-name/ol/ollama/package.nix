@@ -137,13 +137,13 @@ let
 in
 goBuild (finalAttrs: {
   pname = "ollama";
-  version = "0.17.0";
+  version = "0.17.1";
 
   src = fetchFromGitHub {
     owner = "ollama";
     repo = "ollama";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-bBoLUcWVsYxtwjJaa1hYTzodRSIT0yoF0raGItPLjR4=";
+    hash = "sha256-rVYOaOI0hEa/hbTL4ZTfp1jcuQDK2Nd8o2omP/yc690=";
   };
 
   vendorHash = "sha256-Lc1Ktdqtv2VhJQssk8K1UOimeEjVNvDWePE9WkamCos=";
@@ -193,7 +193,6 @@ goBuild (finalAttrs: {
   + lib.optionalString stdenv.hostPlatform.isDarwin ''
     rm ml/backend/ggml/ggml_test.go
     rm ml/nn/pooling/pooling_test.go
-    rm model/models/qwen3next/checkpoints_test.go
   '';
 
   overrideModAttrs = (
